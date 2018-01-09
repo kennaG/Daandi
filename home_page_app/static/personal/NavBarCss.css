@@ -1,0 +1,130 @@
+
+ul {
+    margin:0px;
+    padding:0px;
+    list-style: none;    
+}
+
+
+/* this is changing the main elements. e.g Register, Login..! everything else will
+tag along those elements*/
+ul li{
+    float:left;
+    width:150px;
+    height:40px;
+    background-color:black;
+    line-height:40px; /*will center the text vertically*/
+    text-align: center; /* will center the text horizontally.*/
+    font-size: 15px;
+    padding: 0px;
+
+}
+
+/*this will edit all the texts in a. ALL not only the main ones*/
+ul li a {
+    text-decoration: none; /*dnt want to have underline or any fancy format for the titles*/
+    color: red; /*color of text*/
+    /* they are all displayed as block.*/
+}
+
+/*when we hover over over any of the titles.*/
+ul li a:hover {
+    background-color: black;
+    display: block;
+    
+}
+
+/*we needed to access the very inner titles to order them
+not to show up. -note how we accessed the very inner lists :). This is how 
+the css tree structure works.*/
+ul li ul li {
+    display: none;
+}
+
+/*The same as above except we are telling it to SHOW UP when we hover over its parent*/
+ul li:hover ul li{
+    display: block;
+
+}
+
+/*this maybe useless.*/
+.clr {
+background-color: black;
+opacity: 0.9;
+width:100%;
+height: 40px;
+margin-left:0px; 
+}
+
+
+#sidebar{
+    background-color: yellow;
+    width:188px;
+    height:400px;   
+    padding:0;
+    margin-top:5px;
+    float:left;
+}
+
+
+.side ul {
+    list-style: none;
+    margin:0;
+    height: 400px;
+}
+
+.side ul li{
+    position:relative;
+    width:188px;
+    background-color: darkblue;
+    border-top: 1px solid;
+    float:left;
+}
+
+.side ul ul{
+    transition:all 0.3s;
+    opacity: 0;
+    visibility: hidden;
+    position:absolute;
+    left:100%;
+    top:-2%;
+}
+
+.side ul li:hover> ul {
+    opacity:1; 
+    visibility:visible;
+}
+
+.side ul li a{
+    color:#fff;
+    text-decoration: none;
+}
+
+
+/*This is for the content*/
+.main {
+    height:800px; 
+    width: 60%;
+    float: left;
+    padding: 15px;
+    border: 1px solid red;
+    margin-top:5px;
+}
+
+.header {
+    background-color: darkblue;
+    color: #ffffff;
+    padding: 15px;
+    text-align: left;
+}
+
+.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/*This is for form padding*/
+.pad{
+    padding:0px;
+    margin-left: 0px;
+}

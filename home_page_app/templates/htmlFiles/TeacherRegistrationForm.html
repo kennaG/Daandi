@@ -1,0 +1,108 @@
+{% extends "htmlFiles/Header.html" %}
+<!-- -->
+{% block content %}
+
+<div class="header">
+  <h4>Teacher Registration</h4>
+</div>
+
+<div class="container">
+<form class="form-vertical" action="/action_page.php">
+	<!-- Namespace-->
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="Name">Name:</label>
+      <div class="col-sm-5">
+        <input class="form-control" type="text" placeholder="Full Name" id="example-text-input">
+      </div>
+    </div>
+
+    <!-- for StudentID -->
+    <div class="form-group">
+      <label class="control-label col-sm-2">Teacher ID:</label>
+      <div class="col-sm-5">          
+        <input class="form-control" placeholder="SID" id="smFormGroupInput" >
+	  </div>
+    </div>
+
+<!--temp -->
+    <div class="form-group">
+      <label for="example-tel-input" class="col-2 col-form-label">email</label>
+    <div class="col-5">
+      <input class="form-control" type="email" placeholder="name@example.com" id="example-email-input" id="smFormGroupInput">
+    </div>
+  </div>
+
+    <!-- DOB Space 
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Teacher DOB:</label>
+      <div class="col-sm-5">          
+        <input class="form-control" type="date" name="bday">
+      </div>
+    </div>
+  -->
+
+    <!-- Physical address 
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="Name">Sub City:</label>
+      <div class="col-sm-5">
+        <input class="form-control" type="text" placeholder="e.g Kirkos" id="example-text-input">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="Name">Woreda:</label>
+      <div class="col-sm-5">
+        <input class="form-control" type="number" placeholder="e.g 1,2" id="example-number-input" min="0" max="50">
+      </div>
+    </div>
+-->
+    <!-- Phone 
+    <div class="form-group">
+	    <label for="example-tel-input" class="col-2 col-form-label">Phone</label>
+	  <div class="col-5">
+	    <input class="form-control" type="tel" placeholder="1-(555)-555-5555" id="example-tel-input" id="smFormGroupInput">
+	  </div>
+	</div>
+
+	<div class="form-group">
+	    <label for="example-tel-input" class="col-2 col-form-label">Email</label>
+	  <div class="col-5">
+	    <input class="form-control" type="email" placeholder="name@example.com" id="example-email-input" id="smFormGroupInput">
+	  </div>
+	</div>
+-->
+
+	<!-- Passaword Space -->
+    <p>Create Password</p>
+   	
+   	<div class="form-group">
+      <label class="control-label col-sm-2" for="Name">Password:</label>
+      <div class="col-sm-5">
+        <input class="form-control" type="password" placeholder= "hunter2" id="example-password-input">
+      </div>
+    </div>
+
+<!-- temp -->
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="Name">User Name:</label>
+      <div class="col-sm-5">
+        <input class="form-control" type="text" placeholder="Full Name" id="example-text-input">
+      </div>
+    </div>
+
+
+
+    <!-- Submit Space -->
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-5">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </div>
+</form>
+</div>
+
+
+
+
+{% endblock %}

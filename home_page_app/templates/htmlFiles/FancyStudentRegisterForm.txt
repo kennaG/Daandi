@@ -1,0 +1,140 @@
+
+
+{% extends "htmlFiles/Header.html" %}
+
+{% block content %}
+
+<div class="header">
+  <h4>Student Registration <small>2012 Grade 9-12 registration from</small></h4>
+</div>
+
+<div class="pad">
+<div class="container">
+<h3>Student Info</h3>
+  <form class="form-horizontal" action="/action_page.php">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="Name">Student Name:</label>
+      <div class="col-sm-5">
+        <input class="form-control" type="text" placeholder="Full Name" id="example-text-input">
+      </div>
+    </div>
+    
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Student DOB:</label>
+      <div class="col-sm-5">          
+        <input class="form-control" type="date" name="bday">
+      </div>
+    </div>
+    
+
+    <div class="form-group">
+      <label class="control-label col-sm-2">Grade:</label>
+      <div class="col-sm-5">          
+        <input class="form-control" type="number" placeholder="9" id="example-number-input" min="9" max="12">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="Name">Section:</label>
+      <div class="col-sm-5">
+        <input class="form-control" type="text" placeholder="e.g A,B" id="example-text-input">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2">Student ID:</label>
+      <div class="col-sm-5">          
+        <input class="form-control" placeholder="SID" id="smFormGroupInput" >
+
+      </div>
+    </div>
+
+    <div class="form-group">
+	    <label for="example-tel-input" class="col-3 col-form-label">Student or Home Phone</label>
+	  <div class="col-5">
+	    <input class="form-control" type="tel" placeholder="1-(555)-555-5555" id="example-tel-input" id="smFormGroupInput">
+	  </div>
+	</div>
+
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="Name">Sub City:</label>
+      <div class="col-sm-5">
+        <input class="form-control" type="text" placeholder="e.g Kirkos" id="example-text-input">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="Name">Woreda:</label>
+      <div class="col-sm-5">
+        <input class="form-control" type="number" placeholder="e.g 1,2" id="example-number-input" min="0" max="50">
+      </div>
+    </div>
+
+    <h3>Parent Info</h3>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="Name">Parent 1 Name:</label>
+      <div class="col-sm-5">          
+        <input class="form-control" placeholder="Full Name" id="smFormGroupInput" type="text" id="example-text-input" >
+
+      </div>
+    </div>
+
+
+    <div class="form-group">
+	    <label for="example-tel-input" class="col-2 col-form-label">Parent 1 Phone</label>
+	  <div class="col-5">
+	    <input class="form-control" type="tel" placeholder="1-(555)-555-5555" id="example-tel-input" id="smFormGroupInput">
+	  </div>
+	</div>
+
+	<div class="form-group">
+	    <label for="example-tel-input" class="col-2 col-form-label">Parent 1 email</label>
+	  <div class="col-5">
+	    <input class="form-control" type="email" placeholder="name@example.com" id="example-email-input" id="smFormGroupInput">
+	  </div>
+	</div>
+
+
+	<div class="form-group">
+      <label class="control-label col-sm-2" for="Name">Parent 2 Name:</label>
+      <div class="col-sm-5">          
+        <input class="form-control" placeholder="Full Name" id="smFormGroupInput" type="text" id="example-text-input" >
+
+      </div>
+    </div>
+
+
+    <div class="form-group">
+	    <label for="example-tel-input" class="col-2 col-form-label">Parent 2 Phone</label>
+	  <div class="col-5">
+	    <input class="form-control" type="tel" placeholder="1-(555)-555-5555" id="example-tel-input" id="smFormGroupInput">
+	  </div>
+	</div>
+
+	<div class="form-group">
+	    <label for="example-tel-input" class="col-2 col-form-label">Parent 2 email</label>
+	  <div class="col-5">
+	    <input class="form-control" type="email" placeholder="name@example.com" id="example-email-input" id="smFormGroupInput">
+	  </div>
+	</div>
+
+	<div class="form-group">
+	    <label for="example-tel-input" class="col-2 col-form-label">Home Phone</label>
+	  <div class="col-5">
+	    <input class="form-control" type="tel" placeholder="1-(555)-555-5555" id="example-tel-input" id="smFormGroupInput">
+	  </div>
+	</div>
+
+
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-5">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
+</div>
+
+
+{% endblock %}

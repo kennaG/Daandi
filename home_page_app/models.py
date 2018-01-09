@@ -26,7 +26,7 @@ class student(models.Model):
 
 #database for parents
 class parent(models.Model):
-	user = models.OneToOneField(User,on_delete=models.CASCADE,default=None)
+	#user = models.OneToOneField(User,on_delete=models.DO_NOTHING,default=None)
 	ParentID = models.AutoField(primary_key=True, default=None)
 	Name=models.CharField(max_length=30, default=None, null=True, blank = True)
 	#Email=models.EmailField(default=None)
@@ -39,3 +39,5 @@ class parent(models.Model):
 
 	def __unicode__(self):
 		return self.Name
+
+#does it recodnize this ?

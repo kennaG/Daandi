@@ -39,5 +39,3 @@ class parent(models.Model):
 
 	def __unicode__(self):
 		return self.Name
-
-#does it recodnize this ?

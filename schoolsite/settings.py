@@ -41,7 +41,19 @@ INSTALLED_APPS = [
     
 ]
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # need this during production for sending email.
+ # need this during production for sending email.
+
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_PASSWORD = '1Aoicsacsap' # the password to the sender's email.
+EMAIL_HOST_USER = 'kennagutema@gmail.com' # this is the sender's email.
+EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+
+
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

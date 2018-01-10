@@ -33,15 +33,15 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'home_page_app',
     'django.contrib.admin',
-    'django.contrib.auth',
+    'django.contrib.auth', # this is good for sending an email.
     'django.contrib.contenttypes',
-    
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
 ]
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend' # need this during production for sending email.
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

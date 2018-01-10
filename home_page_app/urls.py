@@ -10,6 +10,8 @@ urlpatterns = [
     url(r'^TeacherRegistration/', views.TeacherRegistration, name='TeacherRegistration'),
     url(r'^ParentRegistration/', views.ParentRegistration, name='ParentRegistration'),
     url(r'^(?P<id>\d+)/$', views.student_detail, name='Details/(?P<id>\d+)/'),
+    
+
     #url(r'^TeacherRegister/', views.register, name='register'),
     #url(r'^ParentRegister/', views.register, name='register'),
     #url(r'^StudentLogin/', views.register, name='register'),

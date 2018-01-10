@@ -7,9 +7,10 @@ from .models import parent #I m ight need this later
 from django.core.exceptions import ObjectDoesNotExist
 from django.contrib.auth.models import User
 
+
 user=get_user_model()
 
-class UserLoginForm(forms.ModelForm):
+class UserLoginForm(forms.Form): #this has to be forms.Form. why ? the others are ModelForm. maybe because they refer to other forms fields.
 	username=forms.CharField()
 	password = forms.CharField(widget=forms.PasswordInput)
 	def clean(self, *args, **kwargs):

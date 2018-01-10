@@ -9,10 +9,12 @@ from django.db.models.signals import post_save
 
 class student(models.Model):
 	# use will already have name, lastname, email, username, password
-	#user = models.OneToOneField(User,on_delete=models.DO_NOTHING, default=None)
-	Name=models.CharField(max_length=30, null=True, blank = True)
+	# this is both foreign key and also makes sure sure the relation is onetoone.
+	user = models.OneToOneField(User,on_delete=models.DO_NOTHING, default=None)
+	student_id = models.AutoField(primary_key = True, default = None)
+	Name = models.CharField(max_length=30, null=True, blank = True)
 	studentCode = models.IntegerField(default=None)
-	SID= models.IntegerField(default=None, null = True)
+	#SID= models.IntegerField(default=None, null = True)
 	#DOB= models.DateField(default=None)
 	#Email=models.EmailField(null=True, blank = True)
 	#UserName=models.CharField(max_length=30,null=True, blank = True)

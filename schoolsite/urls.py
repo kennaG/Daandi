@@ -25,7 +25,7 @@ urlpatterns = [
 ]
 
 urlpatterns += [
-    url(r'^$',RedirectView.as_view(url='/home_page_app',permanent=True)),
+    url(r'^$',RedirectView.as_view(url='/test1',permanent=True)),
 ]
 
 

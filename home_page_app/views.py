@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 #from __future__ import unicode_literals
 #from .models import student #bucky's method
-from django.contrib.auth import (authenticate, get_user_model,login,logout)
+from django.contrib.auth import (authenticate, get_user_model,logout)
+from django.contrib.auth import login as auth_login
 from django.shortcuts import render, get_object_or_404
 from .forms import UserLoginForm, StudentRegistrationForm
 from django.shortcuts import redirect
+from django.contrib.auth import views as auth_views
 #from .forms import ParentSignUpForm
 from django.http import HttpResponseRedirect, HttpResponse
 
@@ -156,12 +158,15 @@ def login(request):
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-        user = auth.authenticate(username=username, password=password)
+        user = authenticate(username=username, password=password)
 
         if user is not None:
             # correct username and password login the user
-            auth.login(request, user)
-            return redirect('admin_page')
+			auth_login(request, user)
+			return redirect('admin_page')
+            #login(request)
+
+            
 
         else:
             messages.error(request, 'Error wrong username/password')

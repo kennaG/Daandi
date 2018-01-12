@@ -18,10 +18,13 @@ from django.contrib import admin
 from django.views.generic import RedirectView
 from django.contrib.auth import views as auth_views
 
+
+
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^home_page_app/',include('home_page_app.urls'))
+    url(r'^home_page_app/',include('home_page_app.urls')),
     #url(r'^', include('django.contrib.auth.urls')),
+    
 
     # url(r'^$', include('home_page_app.urls')),
     # url(r'^StudentRegister/', include('home_page_app.urls'))
@@ -34,7 +37,3 @@ urlpatterns += [
 urlpatterns += [
     url(r'^accounts/',include('django.contrib.auth.urls')),
 ]
-
-
-
-

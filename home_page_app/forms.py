@@ -10,6 +10,7 @@ from django.contrib.auth.models import User
 
 user=get_user_model()
 
+#this is for the 'studentLogin' although it says userlogin.
 class UserLoginForm(forms.Form): #this has to be forms.Form. why ? the others are ModelForm. maybe because they refer to other forms fields.
 	username=forms.CharField()
 	password = forms.CharField(widget=forms.PasswordInput)

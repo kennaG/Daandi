@@ -4,6 +4,7 @@
 from django.contrib.auth import (authenticate, get_user_model,login,logout)
 from django.shortcuts import render, get_object_or_404
 from .forms import UserLoginForm, StudentRegistrationForm
+from django.shortcuts import redirect
 #from .forms import ParentSignUpForm
 from django.http import HttpResponseRedirect, HttpResponse
 
@@ -144,3 +145,37 @@ def student_list(request):
 		"title":instance
 	}
 	return render(request,'htmlFiles/student_list.html',context)
+
+
+
+
+def login(request):
+    if request.user.is_authenticated():
+        return redirect('admin_page')
+
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = auth.authenticate(username=username, password=password)
+
+        if user is not None:
+            # correct username and password login the user
+            auth.login(request, user)
+            return redirect('admin_page')
+
+        else:
+            messages.error(request, 'Error wrong username/password')
+
+    return render(request, 'registration/login.html')
+
+
+def logout(request):
+    auth.logout(request)
+    return render(request,'registration/logout.html')
+
+
+def admin_page(request):
+    if not request.user.is_authenticated():
+        return redirect('blog_login')
+
+    return render(request, 'htmlFiles/admin_page.html')

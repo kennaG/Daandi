@@ -7,6 +7,7 @@ from django.shortcuts import render, get_object_or_404
 from .forms import UserLoginForm, StudentRegistrationForm
 from django.shortcuts import redirect
 from django.contrib.auth import views as auth_views
+from django.contrib import messages
 #from .forms import ParentSignUpForm
 from django.http import HttpResponseRedirect, HttpResponse
 
@@ -183,4 +184,4 @@ def admin_page(request):
     if not request.user.is_authenticated():
         return redirect('blog_login')
 
-    return render(request, 'htmlFiles/admin_page.html')
+    return render(request, 'registration/admin_page.html')

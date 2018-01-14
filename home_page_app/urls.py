@@ -12,9 +12,9 @@ urlpatterns = [
     url(r'^ParentRegistration/', views.ParentRegistration, name='ParentRegistration'),
     url(r'^(?P<id>\d+)/$', views.student_detail, name='Details/(?P<id>\d+)/'),
  
-    url(r'^accounts/login/$', views.login, name='blog_login'),
-    url(r'^accounts/logout/$', views.logout, name='logout'),
-    url(r'^accounts/admin_page/$', views.admin_page, name='admin_page'),
+    url(r'^login/$', views.login, name='blog_login'),
+    url(r'^logout/$', views.logout, name='logout'),
+    url(r'^admin_page/$', views.admin_page, name='admin_page'),
 
     #url(r'^TeacherRegister/', views.register, name='register'),
     #url(r'^ParentRegister/', views.register, name='register'),

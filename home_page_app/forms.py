@@ -52,7 +52,7 @@ class NameForm(forms.ModelForm):
 	
 	class Meta:
 		model = parent
-		fields = ['Name']
+		fields = ['ParentID']
 	
 '''
 why doesn't this work ???

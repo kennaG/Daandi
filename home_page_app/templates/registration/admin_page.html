@@ -2,26 +2,41 @@
 
 <html>
 
-{% block content %}s
+{% block content %}
 
     <div class="content">
         
 
-        <p>Welcome {{ request.user.student.Name|default:"NA" }} !</p>
 
-        <p>User Details:</p>
+        {% if user.student %}
 
+            <p>Welcome {{ request.user.student.Name }}</p>
+<!---
+        { % elif user.parent  % }
+
+            <p>Welcome {{ request.user.parent }}
+-->
+        {% elif request.user.is_superuser  %}
+
+            <p>Welcome {{ request.user.email }}</p>
+            
         <ul>
-            <li>Email: {{ request.user.username.email|default:"NA" }}</li>
+            <li>Email: {{ request.user.email|default:"NA" }}</li>
             <li>SuperUser: {{ request.user.is_superuser }}</li>
             <li>Staff: {{ request.user.is_staff }}</li>
             <li>Date Joined: {{ request.user.date_joined }}</li>
             <li>Last Login: {{ request.user.last_login }}</li>
         </ul>
 
+        {% endif %}
+
+
+        <p>User Details:</p>
+
+
         <p><a href="{% url 'logout' %}">Logout</a></p>
 
         </div>
     
 </html>
-{% endblock %}s
+{% endblock %}

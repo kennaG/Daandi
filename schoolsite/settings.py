@@ -88,8 +88,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'schoolsite.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
     'default': {
@@ -98,6 +96,27 @@ DATABASES = {
     }
 }
 
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'sqlserver_ado',
+        'NAME': 'ethiopian_district',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '127.0.0.1',
+        'PORT': '1433',
+        'OPTIONS' : {
+            'provider':'SQLNCLI11',
+            'use_mars': False,
+            'use_legacy_date_fields': 'True',
+            'extra_params': '',
+            #'provider':'SQLOLEDB',
+            'disable_avg_cast':False
+            },
+        #'TEST_CREATE': False,
+    }
+}
+'''
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators

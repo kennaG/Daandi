@@ -7,10 +7,11 @@ from django.shortcuts import render, get_object_or_404
 from .forms import UserLoginForm, StudentRegistrationForm
 from django.shortcuts import redirect
 from django.contrib.auth import views as auth_views
-from django.contrib import messages
+from django.contrib import messages # parents can now use the update view to update thir contact.
 #from .forms import ParentSignUpForm
 from django.http import HttpResponseRedirect, HttpResponse
-
+from django.views.generic.edit import UpdateView # used for updating phones by different models.
+from .models import parent
 user = get_user_model()
 #from .forms import NameForm
 #from .models import student
@@ -164,9 +165,6 @@ def login(request):
 			auth_login(request, user)
 			return redirect('admin_page')
             #login(request)
-
-            
-
         else:
             messages.error(request, 'Error wrong username/password')
 
@@ -183,3 +181,11 @@ def admin_page(request):
         return redirect('blog_login')
 
     return render(request, 'registration/admin_page.html')
+
+# this is a class used to update the phone number of a parent model.
+class info_update(UpdateView):
+	model = parent
+	fields = ['phone']
+	template_name_suffix = '_update_form'
+
+

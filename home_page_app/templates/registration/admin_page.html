@@ -28,6 +28,12 @@
             <li>Last Login: {{ request.user.last_login }}</li>
         </ul>
 
+
+        {% elif request.user.parent  %}
+
+            <p> welcome {{ request.user.parent.fname}} </p>
+
+
         {% endif %}
 
 

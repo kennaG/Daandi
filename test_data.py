@@ -77,13 +77,7 @@ with codecs.open("teacher_data.json","w","utf8") as json_file: # the data genera
 
 
 
-
-
-
-
-
-
-'''  this part is for laoding a json file into a the user model. '''
+'''  this part is for laoding a json file into an already existing user model. '''
 # with open(sys.argv[1],"r") as json_file:
 # 	storedata = json.load(json_file)
 

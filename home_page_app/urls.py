@@ -3,18 +3,22 @@ from . import views
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
-    url(r'^StudentLogin/', views.StudentLogin, name='login'),
-    url(r'^TeacherLogin/', views.TeacherLogin, name='TeacherLogin'),
-    url(r'^ParentLogin/', views.ParentLogin, name='ParentLogin'),
-    url(r'^StudentRegistration/', views.StudentRegistration, name='StudentRegistration'),
-    url(r'^TeacherRegistration/', views.TeacherRegistration, name='TeacherRegistration'),
-    url(r'^ParentRegistration/', views.ParentRegistration, name='ParentRegistration'),
-    url(r'^(?P<id>\d+)/$', views.student_detail, name='Details/(?P<id>\d+)/'),
- 
-    url(r'^login/$', views.login, name='blog_login'),
-    url(r'^logout/$', views.logout, name='logout'),
-    url(r'^admin_page/$', views.admin_page, name='admin_page'),
+    url(r'^$', views.index, name='index'), # this is the main page. it's important.
+    
+
+    #url(r'^StudentLogin/', views.StudentLogin, name='login'), # old stuff I think
+    #url(r'^TeacherLogin/', views.TeacherLogin, name='TeacherLogin'),
+    #url(r'^ParentLogin/', views.ParentLogin, name='ParentLogin'),
+    #url(r'^StudentRegistration/', views.StudentRegistration, name='StudentRegistration'),
+    #url(r'^TeacherRegistration/', views.TeacherRegistration, name='TeacherRegistration'),
+    #url(r'^ParentRegistration/', views.ParentRegistration, name='ParentRegistration'),
+    
+    # dnt need this for righ now. delete it if there is way another way
+    #url(r'^(?P<id>\d+)/$', views.student_detail, name='Details/(?P<id>\d+)/'),
+
+    #url(r'^login/$', views.login, name='blog_login'),
+    #url(r'^logout/$', views.logout, name='logout'),
+    #url(r'^admin_page/$', views.admin_page, name='admin_page'),
 
     #url(r'^TeacherRegister/', views.register, name='register'),
     #url(r'^ParentRegister/', views.register, name='register'),

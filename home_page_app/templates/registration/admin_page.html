@@ -11,14 +11,6 @@
         {% if user.student %}
 
             <p>Welcome {{ request.user.student.Name }}</p>
-<!---
-        { % elif user.parent  % }
-
-            <p>Welcome {{ request.user.parent }}
--->
-        {% elif request.user.is_superuser  %}
-
-            <p>Welcome {{ request.user.email }}</p>
             
         <ul>
             <li>Email: {{ request.user.email|default:"NA" }}</li>
@@ -27,6 +19,17 @@
             <li>Date Joined: {{ request.user.date_joined }}</li>
             <li>Last Login: {{ request.user.last_login }}</li>
         </ul>
+<!---
+        { % elif user.parent  % }
+
+            <p>Welcome {{ request.user.parent }}
+-->
+        {% elif request.user.is_superuser  %}
+
+        
+
+
+
 
 
         {% elif request.user.parent  %}

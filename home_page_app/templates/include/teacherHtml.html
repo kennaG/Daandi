@@ -1,0 +1,13 @@
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static 'personal/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<div class="w3-sidebar w3-bar-block w3-light-grey" style="width:15%">
+  <a href="#" class="w3-bar-item w3-button w3-border-bottom">Classes</a>
+  <a href="#" class="w3-bar-item w3-button w3-border-bottom">Manage Account</a>
+  <a href="#" class="w3-bar-item w3-button w3-border-bottom">Manage students</a>
+</div>
+
+<div class="w3-container">
+  <center>Hello {{user.teacher.first_name}}</center>
+</div>

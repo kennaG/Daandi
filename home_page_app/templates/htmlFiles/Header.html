@@ -7,19 +7,63 @@
 	
 	{% load staticfiles %}
 	<link rel="stylesheet" href="{% static 'personal/css/bootstrap.min.css' %}">
-	<link rel="stylesheet" href="{% static 'personal/loginForm.css' %}">
 	<link rel="stylesheet" href="{% static 'personal/NavBarCss.css' %}">
 	<link rel="stylesheet" href="{% static 'personal/responsive.css' %}">
-	<script src="{% static 'personal/js/bootstrap.min.js' %}"></script>
+	
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <body class="body" style="background-color: #f6f6f6">
-	{% block content %}
-	<div> 
+	
 
+	<div class="header">
+  		<h1>Daandi Boruu</h1>
 	</div>
+
+
+  
+  <script type="text/javascript">
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+  </script>
+	  <div class="topnav" id="myTopnav">
+	  		{% if user.is_authenticated %}
+				
+				<a href="#" class="active">SchoolHome</a>
+				<a href="#" >Sign Out</a>
+				<a href="#" >Sign Out</a> 
+				
+				<a href="{% url 'logout' %}" class="active float-right">Sign Out</a>
+				<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+				<!-- can add links on the top bar here for every page. -->
+		    {% endif %}
+	</div>
+
+	<div class="nav-item">
+			{% if user.is_authenticated %}
+				{% if user.student %}
+					{% include "include/studentHtml.html" %}
+				{% elif user.teacher %}
+					{% include "include/teacherHtml.html" %}
+				{% elif user.parent %}
+					{% include "include/parentHtml.html" %}
+				{% endif %}
+			{% endif %}		    
+	</div>
+
+
+	{% block content %}
+	<div>
+		
+	</div>
+
 	{% endblock %}
 </body>
 
